@@ -1,0 +1,71 @@
+.logo {
+  font-size: 8rem;
+  margin: 2rem;
+  opacity: 0;
+  animation: fly-in 1s 0.3s, opacity 1s 0.3s forwards;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin: 3rem;
+  padding: 2rem;
+  width: 20rem;
+  border-radius: 1rem;
+
+  box-shadow: 1px 15px 30px 8px rgba(133, 133, 160, 0.1);
+  cursor: pointer;
+  transition: 0.3s transform;
+}
+span {
+  color: rgb(39, 143, 51);
+}
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 1px 20px 35px 8px rgba(133, 133, 160, 0.07);
+  color: rgb(39, 143, 51);
+}
+
+.btn1 {
+  opacity: 0;
+  animation: fly-in 1s 0.2s, opacity 1s 0.2s forwards;
+}
+.btn2 {
+  opacity: 0;
+  animation: fly-in 1s 0.1s, opacity 1s 0.1s forwards;
+}
+
+@keyframes findit {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
