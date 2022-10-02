@@ -1,60 +1,81 @@
 .loginBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: #fc5105;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: 2px solid #000;
+  position: relative;
 }
-.loginBox h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #0e153a;
+.loginBox .text {
   text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  color: #515151;
+  font-size: 4rem;
 }
 .loginBox .userBox {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 .loginBox .userBox input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 10px;
-  color: #000;
-  margin-bottom: 1px solid #fff;
+  width: 25rem;
+  margin: 3rem 0rem;
+  padding: 0rem 0.5rem;
+  padding-bottom: 5px;
+
+  border: 0px;
+  border-bottom: 3px solid #515151;
+  box-shadow: 1px 2rem 30px 8px rgba(133, 133, 160, 0.05);
   outline: none;
-  background: transparent;
+  border-radius: 1rem 1rem 0rem 0rem;
+
+  color: #515151;
+  font-size: 2rem;
 }
 .loginBox .userBox label {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
+
+  margin: 3rem 0.5rem;
+
+  font-size: 2rem;
+  color: #51515178;
   pointer-events: none;
-  transition: 0.5s;
+  transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
+    0.3s margin, 0.3s padding, 0.3s font-size;
 }
 .loginBox .userBox input:focus ~ label,
 .loginBox .userBox input:valid ~ label {
-  top: -20px;
+  margin: 3rem 0rem;
+  top: -2rem;
   left: 0;
-  color: #0e153a;
-  font-size: 12px;
+  color: #515151;
+  font-size: 1rem;
 }
-span {
-  position: relative;
-  display: inline-flex;
-  width: 120px;
-  height: 45px;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin: 3rem;
+  margin-top: 6rem;
+  margin-bottom: -5rem;
+
+  padding: 1rem;
+  width: 19rem;
+  border: 3px solid #515151d7;
+  border-radius: 1rem;
+
+  color: #515151d7;
+  font-size: 1.5rem;
+
+  box-shadow: 1px 30px 30px 8px rgba(133, 133, 160, 0.08);
+  cursor: pointer;
+  transition: 0.3s transform, 0.3s color, 0.3s box-shadow;
 }
-span a {
-  font-size: 12px;
-  letter-spacing: 1px;
-  transform-style: preserve-3d;
-  transform: translatez(-25px);
-  transition: transform 0.25s;
+.loginBox .userBox input:focus ~ label,
+.loginBox .userBox input:focus {
+  color: #278f33;
+}
+
+.loginBox .userBox input:focus {
+  border-bottom: 3px solid #278f33;
 }

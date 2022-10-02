@@ -1,12 +1,9 @@
 import Classes from "./styles/SignIn.module.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   return (
     <div className={Classes.loginBox}>
-      <h2>Zaloguj się</h2>
+      {/* <div className={Classes.text}>Zaloguj się</div> */}
       <form>
         <div className={Classes.userBox}>
           <input type={"text"} required=" " />
@@ -15,7 +12,7 @@ const SignIn = () => {
               className={`${Classes.fa} ${Classes.faUser}`}
               aria-hidden="true"
             ></i>
-            username
+            login
           </label>
         </div>
         <div className={Classes.userBox}>
@@ -25,10 +22,10 @@ const SignIn = () => {
               className={`${Classes.fa} ${Classes.faUser}`}
               aria-hidden="true"
             ></i>
-            username
+            haslo
           </label>
         </div>
-        <span class={Classes.myClass}></span>
+        <div class={Classes.btn}> ZALOGUJ SIĘ </div>
       </form>
     </div>
   );
