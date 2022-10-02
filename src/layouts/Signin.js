@@ -5,7 +5,7 @@ const SignIn = () => {
     <div className={Classes.loginBox}>
       {/* <div className={Classes.text}>Zaloguj się</div> */}
       <form>
-        <div className={Classes.userBox}>
+        <div className={`${Classes.userBox} ${Classes.in1}`}>
           <input type={"text"} required=" " />
           <label>
             <i
@@ -15,7 +15,7 @@ const SignIn = () => {
             login
           </label>
         </div>
-        <div className={Classes.userBox}>
+        <div className={`${Classes.userBox} ${Classes.in2}`}>
           <input type={"password"} required=" " />
           <label>
             <i
@@ -25,7 +25,9 @@ const SignIn = () => {
             haslo
           </label>
         </div>
-        <div class={Classes.btn}> ZALOGUJ SIĘ </div>
+        <div className={`${Classes.userBox} ${Classes.in3}`}>
+          <div class={Classes.btn}> ZALOGUJ SIĘ </div>
+        </div>
       </form>
     </div>
   );
