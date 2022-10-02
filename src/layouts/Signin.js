@@ -1,11 +1,32 @@
 import Classes from "./styles/SignIn.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const [isUnloading, setIsUnloading] = useState(false);
+
+  const navigate = useNavigate();
+  function wait(time) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, time);
+    });
+  }
+
+  async function goToPage() {
+    setIsUnloading(true);
+    await wait(1200);
+    navigate(`/XDDDDDDDDDDD`);
+  }
+
   return (
     <div className={Classes.loginBox}>
       {/* <div className={Classes.text}>Zaloguj się</div> */}
       <form>
-        <div className={`${Classes.userBox} ${Classes.in1}`}>
+        <div
+          className={`${Classes.userBox} ${Classes.in1} ${
+            isUnloading ? Classes.out1 : ""
+          } `}
+        >
           <input type={"text"} required=" " />
           <label>
             <i
@@ -15,7 +36,11 @@ const SignIn = () => {
             login
           </label>
         </div>
-        <div className={`${Classes.userBox} ${Classes.in2}`}>
+        <div
+          className={`${Classes.userBox} ${Classes.in2} ${
+            isUnloading ? Classes.out2 : ""
+          } `}
+        >
           <input type={"password"} required=" " />
           <label>
             <i
@@ -25,8 +50,14 @@ const SignIn = () => {
             haslo
           </label>
         </div>
-        <div className={`${Classes.userBox} ${Classes.in3}`}>
-          <div class={Classes.btn}> ZALOGUJ SIĘ </div>
+        <div
+          className={`${Classes.userBox} ${Classes.in3} ${
+            isUnloading ? Classes.out3 : ""
+          } `}
+        >
+          <div class={Classes.btn} onClick={goToPage}>
+            ZALOGUJ SIĘ
+          </div>
         </div>
       </form>
     </div>

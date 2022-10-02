@@ -102,6 +102,23 @@
   opacity: 0%;
   animation: fly-in 1s 0.1s, opacity-in 1s 0.1s forwards;
 }
+.out1 {
+  opacity: 100%;
+  animation: fly-out 1s ease-in 0.2s forwards;
+}
+.out2 {
+  opacity: 100%;
+  animation: fly-out 1s ease-in 0.1s forwards;
+}
+.out3 {
+  opacity: 100%;
+  animation: fly-out-btn 1s ease-in 0s forwards;
+}
+.out3:hover {
+  transform: translateY(-5px);
+  opacity: 100%;
+  animation: fly-out-hover 1s ease-in 0s forwards;
+}
 
 @keyframes fly-in {
   0% {
@@ -134,7 +151,7 @@
 }
 @keyframes fly-out-hover {
   0% {
-    transform: translateY(-5px);
+    transform: translateY(0px);
     opacity: 100%;
   }
   100% {
