@@ -17,7 +17,7 @@
 
   box-shadow: 1px 15px 30px 8px rgba(133, 133, 160, 0.1);
   cursor: pointer;
-  transition: 0.3s transform;
+  transition: 0.3s transform, 0.3s color, 0.3s box-shadow;
 }
 span {
   color: rgb(39, 143, 51);
@@ -75,6 +75,16 @@ span {
     opacity: 0%;
   }
 }
+@keyframes fly-out-hover {
+  0% {
+    transform: translateY(-5px);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0%;
+  }
+}
 
 a {
   text-decoration: unset;
@@ -89,7 +99,15 @@ a {
   opacity: 100%;
   animation: fly-out 1s ease-in 0.1s forwards;
 }
+.btnOut1:hover {
+  opacity: 100%;
+  animation: fly-out-hover 1s ease-in 0.1s forwards;
+}
 .btnOut2 {
   opacity: 100%;
   animation: fly-out 1s ease-in 0s forwards;
+}
+.btnOut2:hover {
+  opacity: 100%;
+  animation: fly-out-hover 1s ease-in 0.1s forwards;
 }

@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import LandingPage from "../layouts/LandingPage";
 import Error404 from "../layouts/Error404";
-import SignIn from "./Signin";
+import SignIn from "./SignIn";
 import CreateAccount from "./CreateAccount";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
