@@ -2,7 +2,7 @@ import Classes from "./styles/LandingPage.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LandingPage = () => {
+const LandingPage = (props) => {
   const [isUnloading, setIsUnloading] = useState(false);
 
   const navigate = useNavigate();
@@ -20,6 +20,23 @@ const LandingPage = () => {
 
   return (
     <div>
+      {props.isDark ? (
+        <div
+          onClick={() => {
+            props.isDarkFunction(false);
+          }}
+        >
+          Your app is in dark mode
+        </div>
+      ) : (
+        <div
+          onClick={() => {
+            props.isDarkFunction(true);
+          }}
+        >
+          Your app is in a light mode
+        </div>
+      )}
       <div className={`${Classes.logo} ${isUnloading ? Classes.logoOut : ""}`}>
         find<span>.it</span>
       </div>

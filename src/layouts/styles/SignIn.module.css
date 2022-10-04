@@ -5,7 +5,7 @@
   text-align: center;
   margin-top: 8rem;
   margin-bottom: 5rem;
-  color: #515151;
+  color: var(--main-color);
   font-size: 4rem;
 }
 .loginBox .userBox {
@@ -14,18 +14,19 @@
   position: relative;
 }
 .loginBox .userBox input {
+  background-color: var(--background-color);
   width: 25rem;
   margin: 3rem 0rem;
   padding: 0rem 0.5rem;
   padding-bottom: 5px;
 
   border: 0px;
-  border-bottom: 3px solid #515151;
+  border-bottom: 3px solid var(--main-color);
   box-shadow: 1px 2rem 30px 8px #8585a00d;
   outline: none;
   border-radius: 1rem 1rem 0rem 0rem;
 
-  color: #515151;
+  color: var(--main-color);
   font-size: 2rem;
   transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
     0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border;
@@ -38,7 +39,7 @@
   margin: 3rem 0.5rem;
 
   font-size: 2rem;
-  color: #51515178;
+  color: var(--main-color) 78;
   pointer-events: none;
   transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
     0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border;
@@ -48,7 +49,7 @@
   margin: 3rem 0rem;
   top: -2rem;
   left: 0;
-  color: #515151;
+  color: var(--main-color);
   font-size: 1rem;
 }
 .btn {
@@ -63,10 +64,10 @@
 
   padding: 1rem;
   width: 19rem;
-  border: 3px solid #515151d7;
+  border: 3px solid var(--main-color);
   border-radius: 1rem;
 
-  color: #515151d7;
+  color: var(--main-color) d7;
   font-size: 1.5rem;
 
   box-shadow: 1px 30px 30px 8px #8585a014;
@@ -77,17 +78,17 @@
 .btn:hover {
   transform: translateY(-5px);
   box-shadow: 1px 20px 35px 8px #8585a00d;
-  color: #278f33;
-  border: 3px solid #278f33;
+  color: var(--accent-color);
+  border: 3px solid var(--accent-color);
 }
 
 .loginBox .userBox input:focus ~ label,
 .loginBox .userBox input:focus {
-  color: #278f33;
+  color: var(--accent-color);
 }
 
 .loginBox .userBox input:focus {
-  border-bottom: 3px solid #278f33;
+  border-bottom: 3px solid var(--accent-color);
 }
 
 .in1 {
