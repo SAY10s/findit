@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Classes from "./styles/Error404.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

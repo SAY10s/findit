@@ -21,7 +21,7 @@
 
   border: 0px;
   border-bottom: 3px solid #515151;
-  box-shadow: 1px 2rem 30px 8px rgba(133, 133, 160, 0.05);
+  box-shadow: 1px 2rem 30px 8px #8585a00d;
   outline: none;
   border-radius: 1rem 1rem 0rem 0rem;
 
@@ -69,14 +69,14 @@
   color: #515151d7;
   font-size: 1.5rem;
 
-  box-shadow: 1px 30px 30px 8px rgba(133, 133, 160, 0.08);
+  box-shadow: 1px 30px 30px 8px #8585a014;
   cursor: pointer;
   transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
     0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border;
 }
 .btn:hover {
   transform: translateY(-5px);
-  box-shadow: 1px 20px 35px 8px rgba(133, 133, 160, 0.05);
+  box-shadow: 1px 20px 35px 8px #8585a00d;
   color: #278f33;
   border: 3px solid #278f33;
 }
