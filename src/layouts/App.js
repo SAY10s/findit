@@ -1,4 +1,5 @@
 // import "./styles/AppDark.css";
+import ThemeChange from "../components/ThemeChange";
 import LandingPage from "../layouts/LandingPage";
 import Error404 from "../layouts/Error404";
 import SignIn from "./SignIn";
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <Router>
+      <ThemeChange isDark={isDark} isDarkFunction={setIsDark} />
       <link rel="stylesheet" type="text/css" href={cssPath} />
       <Routes>
         <Route

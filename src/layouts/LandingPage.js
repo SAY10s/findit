@@ -20,7 +20,7 @@ const LandingPage = (props) => {
 
   return (
     <div>
-      {props.isDark ? (
+      {/* {props.isDark ? (
         <div
           onClick={() => {
             props.isDarkFunction(false);
@@ -36,7 +36,7 @@ const LandingPage = (props) => {
         >
           Your app is in a light mode
         </div>
-      )}
+      )} */}
       <div className={`${Classes.logo} ${isUnloading ? Classes.logoOut : ""}`}>
         find<span>.it</span>
       </div>
