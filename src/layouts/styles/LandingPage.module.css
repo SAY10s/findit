@@ -15,7 +15,7 @@
   width: 20rem;
   border-radius: 1rem;
 
-  box-shadow: 1px 15px 30px 8px #8585a01a;
+  box-shadow: 1px 15px 30px 8px var(--box-shadow);
   cursor: pointer;
   transition: 0.3s transform, 0.3s color, 0.3s box-shadow;
 }
@@ -24,7 +24,7 @@ span {
 }
 .btn:hover {
   transform: translateY(-5px);
-  box-shadow: 1px 20px 35px 8px #8585a012;
+  box-shadow: 1px 20px 35px 8px var(--box-shadow-hover);
   color: var(--accent-color);
 }
 

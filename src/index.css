@@ -20,4 +20,6 @@ body {
   font-family: "roboto slab";
   background-color: var(--background-color);
   color: var(--main-color);
+
+  transition: 0.3s background-color;
 }

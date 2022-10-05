@@ -2,4 +2,7 @@
   --main-color: #fff;
   --accent-color: #2ee0ff;
   --background-color: #1f2833;
+  --box-shadow: rgba(14, 22, 32, 0.15);
+  /* --box-shadow-light: ; */
+  --box-shadow-hover: rgba(14, 22, 32, 0.13);
 }
