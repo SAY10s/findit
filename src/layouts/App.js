@@ -1,14 +1,17 @@
 // import "./styles/AppDark.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import ThemeChange from "../components/ThemeChange";
 import LandingPage from "../layouts/LandingPage";
 import Error404 from "../layouts/Error404";
 import SignIn from "./SignIn";
 import CreateAccount from "./CreateAccount";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import TestPanel from "./TestPanel";
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+  const [nameAndSurname, setNameAndSurname] = useState("Kate Bundy");
+
   let cssPath = "./styles/AppDark.css";
   isDark ? (cssPath = "./AppDark.css") : (cssPath = "./AppLight.css");
 
@@ -26,6 +29,12 @@ function App() {
           path="/createaccount"
           element={<CreateAccount isDark={isDark} />}
         ></Route>
+        <Route
+          path="/test"
+          element={
+            <TestPanel isDark={isDark} nameAndSurname={nameAndSurname} />
+          }
+        />
         <Route path="*" element={<Error404 isDark={isDark} />}></Route>
       </Routes>
     </Router>
