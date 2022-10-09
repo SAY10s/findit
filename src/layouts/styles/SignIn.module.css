@@ -61,7 +61,7 @@
 
   margin: 3rem;
   margin-top: 6rem;
-  margin-bottom: -5rem;
+  margin-bottom: 1rem;
 
   padding: 1rem;
   width: 19rem;
@@ -101,6 +101,8 @@
   animation: fly-in 1s 0.2s, opacity-in 1s 0.2s forwards;
 }
 .in3 {
+  display: flex;
+  flex-direction: column;
   opacity: 0%;
   animation: fly-in 1s 0.1s, opacity-in 1s 0.1s forwards;
 }
@@ -120,6 +122,10 @@
   transform: translateY(-5px);
   opacity: 100%;
   animation: fly-out-hover 1s ease-in 0s forwards;
+}
+
+.createAccount {
+  font-size: 0.8rem;
 }
 
 @keyframes fly-in {

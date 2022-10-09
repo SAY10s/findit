@@ -55,8 +55,11 @@ const SignIn = () => {
             isUnloading ? Classes.out3 : ""
           } `}
         >
-          <div class={Classes.btn} onClick={goToPage}>
+          <div className={Classes.btn} onClick={goToPage}>
             ZALOGUJ SIĘ
+          </div>
+          <div className={Classes.createAccount}>
+            Nie masz jeszcze konta? <span>Zarejestruj się!</span>
           </div>
         </div>
       </form>
