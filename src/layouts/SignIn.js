@@ -1,22 +1,48 @@
 import Classes from "./styles/SignIn.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [isUnloading, setIsUnloading] = useState(false);
 
-  const navigate = useNavigate();
-  function wait(time) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, time);
+  // const navigate = useNavigate();
+  // function wait(time) {
+  //   return new Promise((resolve) => {
+  //     setTimeout(resolve, time);
+  //   });
+  // }
+
+  // async function goToPage() {
+  //   setIsUnloading(true);
+  //   await wait(1200);
+  //   navigate(`/XDDDDDDDDDDD`);
+  // }
+
+  function handleSubmit() {
+    fetch(`http://localhost/xamppprojects/login.php`, {
+      // mode: "no-cors",
+      // credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // "Access-Control-Allow-Origin": "*",
+      },
+    }).then(function (response) {
+      console.log(response.json());
     });
   }
+  // const [category, setCategory] = useState([]);
 
-  async function goToPage() {
-    setIsUnloading(true);
-    await wait(1200);
-    navigate(`/XDDDDDDDDDDD`);
-  }
+  // useEffect(() => {
+  //   const getcategory = async () => {
+  //     const res = await fetch("http://localhost/xamppprojects/login");
+  //     const getdata = await res.json();
+  //     setCategory(getdata);
+  //     // console.log(getdata);
+  //   };
+
+  //   getcategory();
+  // }, []);
 
   return (
     <div className={Classes.loginBox}>
@@ -55,7 +81,7 @@ const SignIn = () => {
             isUnloading ? Classes.out3 : ""
           } `}
         >
-          <div className={Classes.btn} onClick={goToPage}>
+          <div className={Classes.btn} onClick={handleSubmit}>
             ZALOGUJ SIĘ
           </div>
           <div className={Classes.createAccount}>
