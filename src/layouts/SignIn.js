@@ -27,9 +27,21 @@ const SignIn = () => {
         "Content-Type": "application/json",
         // "Access-Control-Allow-Origin": "*",
       },
-    }).then(function (response) {
-      console.log(response.json());
-    });
+    })
+      .then(function (response) {
+        // console.log(response.json());
+        return response.json();
+      })
+      .then((data) => {
+        console.log(
+          data[0],
+          data[0]["user_pk"],
+          data[0]["name"],
+          data[0]["surname"],
+          data[0]["email"],
+          data[0]["password"]
+        );
+      });
   }
   // const [category, setCategory] = useState([]);
 
@@ -38,7 +50,7 @@ const SignIn = () => {
   //     const res = await fetch("http://localhost/xamppprojects/login");
   //     const getdata = await res.json();
   //     setCategory(getdata);
-  //     // console.log(getdata);
+  //     // console.log(getdata);P
   //   };
 
   //   getcategory();
