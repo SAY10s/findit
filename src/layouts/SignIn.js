@@ -2,7 +2,7 @@ import Classes from "./styles/SignIn.module.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
+const SignIn = (props) => {
   const [isUnloading, setIsUnloading] = useState(false);
 
   // const navigate = useNavigate();
@@ -41,6 +41,7 @@ const SignIn = () => {
           data[0]["email"],
           data[0]["password"]
         );
+        props.setNameAndSurname(`${data[0]["name"]} ${data[0]["surname"]}`);
       });
   }
   // const [category, setCategory] = useState([]);
