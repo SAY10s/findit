@@ -19,13 +19,16 @@ const SignIn = (props) => {
   }
 
   function handleSubmit() {
+    let formData = new FormData();
+    formData.append("x", "Nikodem");
     fetch(`http://localhost/xamppprojects/login.php`, {
       // mode: "no-cors",
       // credentials: "include",
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      body: formData,
     })
       .then(function (response) {
         // console.log(response.json());
