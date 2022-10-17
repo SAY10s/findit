@@ -1,9 +1,12 @@
 import Classes from "./styles/SignIn.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = (props) => {
   const [isUnloading, setIsUnloading] = useState(false);
+
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const navigate = useNavigate();
   function wait(time) {
@@ -20,7 +23,14 @@ const SignIn = (props) => {
 
   function handleSubmit() {
     let formData = new FormData();
-    formData.append("x", "Nikodem");
+    const enteredEmail = emailRef.current.value;
+    const enteredPassword = passwordRef.current.value;
+
+    console.log(enteredEmail);
+
+    formData.append("email", `${enteredEmail}`);
+    formData.append("password", `${enteredPassword}`);
+
     fetch(`http://localhost/xamppprojects/login.php`, {
       // mode: "no-cors",
       // credentials: "include",
@@ -60,7 +70,7 @@ const SignIn = (props) => {
             isUnloading ? Classes.out1 : ""
           } `}
         >
-          <input type={"text"} required=" " />
+          <input type={"text"} required=" " ref={emailRef} />
           <label>
             <i
               className={`${Classes.fa} ${Classes.faUser}`}
@@ -74,7 +84,7 @@ const SignIn = (props) => {
             isUnloading ? Classes.out2 : ""
           } `}
         >
-          <input type={"password"} required=" " />
+          <input type={"password"} required=" " ref={passwordRef} />
           <label>
             <i
               className={`${Classes.fa} ${Classes.faUser}`}
