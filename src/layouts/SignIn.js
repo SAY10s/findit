@@ -12,10 +12,10 @@ const SignIn = (props) => {
     });
   }
 
-  async function goToPage() {
+  async function goToPage(url = "/XDD", time = 1200) {
     setIsUnloading(true);
-    await wait(1200);
-    navigate(`/Test`);
+    await wait(time);
+    navigate(url);
   }
 
   function handleSubmit() {
@@ -44,7 +44,7 @@ const SignIn = (props) => {
         return data;
       })
       .then((data) => {
-        goToPage();
+        goToPage("/Test");
       });
   }
 

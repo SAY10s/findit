@@ -12,10 +12,10 @@ const LandingPage = (props) => {
     });
   }
 
-  async function goToPage() {
+  async function goToPage(url = "/XDD", time = 1200) {
     setIsUnloading(true);
-    await wait(1200);
-    navigate(`/Signin`);
+    await wait(time);
+    navigate(url);
   }
 
   return (
@@ -44,7 +44,9 @@ const LandingPage = (props) => {
         className={`${Classes.btn} ${Classes.btn1} ${
           isUnloading ? Classes.btnOut1 : ""
         }`}
-        onClick={goToPage}
+        onClick={() => {
+          goToPage("/signin");
+        }}
       >
         GRAJ
       </div>
@@ -52,7 +54,9 @@ const LandingPage = (props) => {
         className={`${Classes.btn} ${Classes.btn2} ${
           isUnloading ? Classes.btnOut2 : ""
         }`}
-        onClick={goToPage}
+        onClick={() => {
+          goToPage("/signin");
+        }}
       >
         TWÓRZ
       </div>
