@@ -5,18 +5,18 @@ import { useNavigate } from "react-router-dom";
 const SignIn = (props) => {
   const [isUnloading, setIsUnloading] = useState(false);
 
-  // const navigate = useNavigate();
-  // function wait(time) {
-  //   return new Promise((resolve) => {
-  //     setTimeout(resolve, time);
-  //   });
-  // }
+  const navigate = useNavigate();
+  function wait(time) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, time);
+    });
+  }
 
-  // async function goToPage() {
-  //   setIsUnloading(true);
-  //   await wait(1200);
-  //   navigate(`/XDDDDDDDDDDD`);
-  // }
+  async function goToPage() {
+    setIsUnloading(true);
+    await wait(1200);
+    navigate(`/Test`);
+  }
 
   function handleSubmit() {
     fetch(`http://localhost/xamppprojects/login.php`, {
@@ -25,7 +25,6 @@ const SignIn = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // "Access-Control-Allow-Origin": "*",
       },
     })
       .then(function (response) {
@@ -42,20 +41,12 @@ const SignIn = (props) => {
           data[0]["password"]
         );
         props.setNameAndSurname(`${data[0]["name"]} ${data[0]["surname"]}`);
+        return data;
+      })
+      .then((data) => {
+        goToPage();
       });
   }
-  // const [category, setCategory] = useState([]);
-
-  // useEffect(() => {
-  //   const getcategory = async () => {
-  //     const res = await fetch("http://localhost/xamppprojects/login");
-  //     const getdata = await res.json();
-  //     setCategory(getdata);
-  //     // console.log(getdata);P
-  //   };
-
-  //   getcategory();
-  // }, []);
 
   return (
     <div className={Classes.loginBox}>
@@ -72,7 +63,7 @@ const SignIn = (props) => {
               className={`${Classes.fa} ${Classes.faUser}`}
               aria-hidden="true"
             ></i>
-            login
+            e-mail
           </label>
         </div>
         <div
@@ -86,7 +77,7 @@ const SignIn = (props) => {
               className={`${Classes.fa} ${Classes.faUser}`}
               aria-hidden="true"
             ></i>
-            haslo
+            hasło
           </label>
         </div>
         <div

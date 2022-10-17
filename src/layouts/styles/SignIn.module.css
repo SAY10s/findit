@@ -27,7 +27,7 @@
   border-radius: 1rem 1rem 0rem 0rem;
 
   color: var(--main-color);
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
     0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border,
     0.3s background-color;
@@ -39,7 +39,7 @@
 
   margin: 3rem 0.5rem;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--main-color) 78;
   pointer-events: none;
   transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
