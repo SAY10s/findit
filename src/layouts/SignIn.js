@@ -26,8 +26,6 @@ const SignIn = (props) => {
     const enteredEmail = emailRef.current.value;
     const enteredPassword = passwordRef.current.value;
 
-    console.log(enteredEmail);
-
     formData.append("email", `${enteredEmail}`);
     formData.append("password", `${enteredPassword}`);
 
@@ -45,15 +43,19 @@ const SignIn = (props) => {
         return response.json();
       })
       .then((data) => {
-        console.log(
-          data[0],
-          data[0]["user_pk"],
-          data[0]["name"],
-          data[0]["surname"],
-          data[0]["email"],
-          data[0]["password"]
-        );
-        props.setNameAndSurname(`${data[0]["name"]} ${data[0]["surname"]}`);
+        console.log(data[0]);
+        if (typeof data[0] !== "undefined") {
+          console.log(
+            data[0],
+            data[0]["user_pk"],
+            data[0]["name"],
+            data[0]["surname"],
+            data[0]["email"],
+            data[0]["password"]
+          );
+          props.setNameAndSurname(`${data[0]["name"]} ${data[0]["surname"]}`);
+        } else console.log("wrong pass or log");
+
         return data;
       })
       .then((data) => {
