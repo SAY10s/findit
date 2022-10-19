@@ -1,0 +1,171 @@
+.loginBox {
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  position: relative;
+}
+.loginBox .text {
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  color: var(--main-color);
+  font-size: 4rem;
+}
+.loginBox .userBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.loginBox .userBox input {
+  background-color: var(--background-color);
+  width: 25rem;
+  margin: 3rem 0rem;
+  padding: 0rem 0.5rem;
+  padding-bottom: 5px;
+
+  border: 0px;
+  border-bottom: 3px solid var(--main-color);
+  box-shadow: 1px 2rem 30px 8px #8585a00d;
+  outline: none;
+  border-radius: 1rem 1rem 0rem 0rem;
+
+  color: var(--main-color);
+  font-size: 1.5rem;
+  transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
+    0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border,
+    0.3s background-color;
+}
+.loginBox .userBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin: 3rem 0.5rem;
+
+  font-size: 1.5rem;
+  color: var(--main-color) 78;
+  pointer-events: none;
+  transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
+    0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border;
+}
+.loginBox .userBox input:focus ~ label,
+.loginBox .userBox input:valid ~ label {
+  margin: 3rem 0rem;
+  top: -2rem;
+  left: 0;
+  color: var(--main-color);
+  font-size: 1rem;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+
+  padding: 1rem;
+  width: 19rem;
+  border: 3px solid var(--main-color);
+  border-radius: 1rem;
+
+  color: var(--main-color) d7;
+  font-size: 1.5rem;
+
+  box-shadow: 1px 30px 30px 8px #8585a014;
+  cursor: pointer;
+  transition: 0.3s transform, 0.3s color, 0.3s box-shadow, 0.3s top, 0.3s bottom,
+    0.3s margin, 0.3s padding, 0.3s font-size, 0.3s border;
+}
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 1px 20px 35px 8px #8585a00d;
+  color: var(--accent-color);
+  border: 3px solid var(--accent-color);
+}
+
+.loginBox .userBox input:focus ~ label,
+.loginBox .userBox input:focus {
+  color: var(--accent-color);
+}
+
+.loginBox .userBox input:focus {
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.in1 {
+  opacity: 0%;
+  animation: fly-in 1s 0.3s, opacity-in 1s 0.3s forwards;
+}
+.in2 {
+  opacity: 0%;
+  animation: fly-in 1s 0.2s, opacity-in 1s 0.2s forwards;
+}
+.in3 {
+  display: flex;
+  flex-direction: column;
+  opacity: 0%;
+  animation: fly-in 1s 0.1s, opacity-in 1s 0.1s forwards;
+}
+.out1 {
+  opacity: 100%;
+  animation: fly-out 1s ease-in 0.2s forwards;
+}
+.out2 {
+  opacity: 100%;
+  animation: fly-out 1s ease-in 0.1s forwards;
+}
+.out3 {
+  opacity: 100%;
+  animation: fly-out-btn 1s ease-in 0s forwards;
+}
+.out3:hover {
+  transform: translateY(-5px);
+  opacity: 100%;
+  animation: fly-out-hover 1s ease-in 0s forwards;
+}
+
+.createAccount {
+  font-size: 0.8rem;
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+@keyframes opacity-in {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fly-out {
+  0% {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0%;
+  }
+}
+@keyframes fly-out-hover {
+  0% {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0%;
+  }
+}

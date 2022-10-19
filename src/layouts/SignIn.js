@@ -1,6 +1,6 @@
 import Classes from "./styles/SignIn.module.css";
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignIn = (props) => {
   const [isUnloading, setIsUnloading] = useState(false);
@@ -104,7 +104,10 @@ const SignIn = (props) => {
             ZALOGUJ SIĘ
           </div>
           <div className={Classes.createAccount}>
-            Nie masz jeszcze konta? <span>Zarejestruj się!</span>
+            Nie masz jeszcze konta?{" "}
+            <Link to={"/CreateAccount"}>
+              <span id="registerLink">Zarejestruj się!</span>
+            </Link>
           </div>
         </div>
       </form>

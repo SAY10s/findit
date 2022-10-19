@@ -23,24 +23,24 @@ function App() {
         <Route
           path="/"
           element={<LandingPage isDark={isDark} isDarkFunction={setIsDark} />}
-        ></Route>
+        />
         <Route
           path="/signin"
           element={
             <SignIn isDark={isDark} setNameAndSurname={setNameAndSurname} />
           }
-        ></Route>
+        />
         <Route
           path="/createaccount"
           element={<CreateAccount isDark={isDark} />}
-        ></Route>
+        />
         <Route
           path="/test"
           element={
             <TestPanel isDark={isDark} nameAndSurname={nameAndSurname} />
           }
         />
-        <Route path="*" element={<Error404 isDark={isDark} />}></Route>
+        <Route path="*" element={<Error404 isDark={isDark} />} />
       </Routes>
     </Router>
   );
