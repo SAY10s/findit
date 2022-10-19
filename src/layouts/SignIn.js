@@ -21,7 +21,8 @@ const SignIn = (props) => {
     navigate(url);
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     let formData = new FormData();
     const enteredEmail = emailRef.current.value;
     const enteredPassword = passwordRef.current.value;
@@ -29,7 +30,7 @@ const SignIn = (props) => {
     formData.append("email", `${enteredEmail}`);
     formData.append("password", `${enteredPassword}`);
 
-    fetch(`http://localhost/xamppprojects/login.php`, {
+    fetch(`http://localhost/xamppprojects/finditbackend/login.php`, {
       // mode: "no-cors",
       // credentials: "include",
       method: "POST",
@@ -100,9 +101,9 @@ const SignIn = (props) => {
             isUnloading ? Classes.out3 : ""
           } `}
         >
-          <div className={Classes.btn} onClick={handleSubmit}>
+          <button className={Classes.btn} onClick={handleSubmit}>
             ZALOGUJ SIĘ
-          </div>
+          </button>
           <div className={Classes.createAccount}>
             Nie masz jeszcze konta?{" "}
             <Link to={"/CreateAccount"}>

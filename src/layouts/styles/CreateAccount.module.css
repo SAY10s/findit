@@ -69,6 +69,7 @@
   width: 19rem;
   border: 3px solid var(--main-color);
   border-radius: 1rem;
+  background-color: transparent;
 
   color: var(--main-color) d7;
   font-size: 1.5rem;
