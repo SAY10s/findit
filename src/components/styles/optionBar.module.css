@@ -18,3 +18,29 @@
   border: 0px;
   border-bottom: 1px solid #3c536f;
 }
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 17.5%;
+  padding-top: 10%;
+  font-size: 20px;
+}
+.activeNav {
+  background-color: #1f2833;
+  color: #2ee0ff;
+}
+.activeNav div {
+  color: inherit;
+}
+.activeNav,
+.inactiveNav {
+  display: flex;
+}
+.inactiveNav {
+  background-color: #1b222b;
+}
+.hr2 {
+  margin-top: 30px;
+}

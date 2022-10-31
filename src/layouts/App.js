@@ -36,7 +36,7 @@ function App() {
           element={<CreateAccount isDark={isDark} />}
         />
         <Route
-          path="/panel"
+          path="/panel/*"
           element={<Panel isDark={isDark} nameAndSurname={nameAndSurname} />}
         />
         <Route
