@@ -39,6 +39,9 @@
   font-size: 0.7vw;
 }
 .gear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-area: 2 / 3 / 4 / 4;
 }
 .pic {
