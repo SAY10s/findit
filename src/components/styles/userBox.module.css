@@ -1,7 +1,6 @@
 .userBox {
   position: absolute;
-  left: 0;
-  bottom: 16px;
+  bottom: 30px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto;

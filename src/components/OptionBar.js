@@ -8,6 +8,7 @@ const OptionBar = () => {
         find<span>.it</span>
       </div>
       <hr />
+      <div className={Classes.links}></div>
       <UserBox />
     </div>
   );
