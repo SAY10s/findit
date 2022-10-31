@@ -60,7 +60,7 @@ const SignIn = (props) => {
         return data;
       })
       .then((data) => {
-        goToPage("/Test");
+        goToPage("/panel");
       });
   }
 

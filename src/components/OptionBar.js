@@ -1,7 +1,8 @@
 import Classes from "./styles/optionBar.module.css";
 import UserBox from "./UserBox";
 
-const OptionBar = () => {
+const OptionBar = (props) => {
+  let name = props.nameAndSurname.split(" ");
   return (
     <div className={Classes.options}>
       <div className={Classes.logo}>
@@ -9,7 +10,7 @@ const OptionBar = () => {
       </div>
       <hr />
       <div className={Classes.links}></div>
-      <UserBox />
+      <UserBox nameAndSurname={name[0]} />
     </div>
   );
 };

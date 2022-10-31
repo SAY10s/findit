@@ -1,10 +1,10 @@
 import "./styles/Panel.css";
 import OptionBar from "../components/OptionBar";
 
-const Panel = () => {
+const Panel = (props) => {
   return (
     <div className="container">
-      <OptionBar />
+      <OptionBar nameAndSurname={props.nameAndSurname} />
       <div className="content"></div>
     </div>
   );
