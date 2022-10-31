@@ -1,0 +1,51 @@
+.userBox {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  width: 100%;
+  height: 137px;
+
+  padding: 33px;
+  padding-bottom: 16px;
+}
+.userBox div {
+  /* font-size: 16px; */
+  /* background-color: aqua; */
+}
+.hr {
+  grid-area: 1 / 1 / 2 / 4;
+  padding-bottom: 31px;
+}
+.hr hr {
+  width: 100%;
+}
+.pfp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+  grid-area: 2 / 1 / 4 / 2;
+}
+.nameAndSurname {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 1.25vw;
+}
+.logOut {
+  color: var(--accent-color);
+  font-size: 0.7vw;
+}
+.gear {
+  grid-area: 2 / 3 / 4 / 4;
+}
+.pic {
+  width: 4vw;
+  aspect-ratio: 1;
+  background-image: url("../../pictures/kim.jpg");
+  background-size: 100%;
+  border-radius: 100%;
+}

@@ -7,6 +7,7 @@ import Error404 from "../layouts/Error404";
 import SignIn from "./SignIn";
 import CreateAccount from "./CreateAccount";
 import TestPanel from "./TestPanel";
+import Panel from "./Panel";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/createaccount"
           element={<CreateAccount isDark={isDark} />}
+        />
+        <Route
+          path="/panel"
+          element={<Panel isDark={isDark} nameAndSurname={nameAndSurname} />}
         />
         <Route
           path="/test"
