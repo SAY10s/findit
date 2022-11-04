@@ -1,5 +1,5 @@
 import Classes from "./styles/SignIn.module.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const SignIn = (props) => {
