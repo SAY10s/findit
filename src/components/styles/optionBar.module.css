@@ -14,7 +14,7 @@
   height: 163px;
 }
 .options hr {
-  width: 75%;
+  width: 90%;
   border: 0px;
   border-bottom: 1px solid #3c536f;
 }
@@ -23,9 +23,18 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding-left: 17.5%;
   padding-top: 10%;
   font-size: 20px;
+}
+.activeNav,
+.inactiveNav {
+  display: flex;
+  align-items: center;
+
+  padding: 10px;
+  padding-left: 25px;
+  width: 90%;
+  border-radius: 0 50px 50px 0px;
 }
 .activeNav {
   background-color: #1f2833;
@@ -42,5 +51,10 @@
   background-color: #1b222b;
 }
 .hr2 {
+  align-self: center;
   margin-top: 30px;
+  width: 90%;
+}
+.text {
+  margin-left: 5px;
 }

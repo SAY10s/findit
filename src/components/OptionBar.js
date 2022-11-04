@@ -20,9 +20,9 @@ const OptionBar = (props) => {
           }
         >
           <div>
-            <SvgMenu />
+            <SvgMenu color={"#ffffff"} />
           </div>
-          <div>Twoje gry</div>
+          <div className={Classes.text}>Twoje gry</div>
         </NavLink>
         <NavLink
           to="t2"
@@ -30,8 +30,8 @@ const OptionBar = (props) => {
             isActive ? Classes.activeNav : Classes.inactiveNav
           }
         >
-          <SvgPlus />
-          Stwórz grę
+          <SvgPlus color={"#ffffff"} />
+          <div className={Classes.text}>Stwórz grę</div>
         </NavLink>
         <hr className={Classes.hr2} />
       </div>

@@ -4,7 +4,7 @@ import SvgSettings from "./svg/SvgSettings";
 const UserBox = (props) => {
   return (
     <div className={Classes.userBox}>
-      <div class={Classes.hr}>
+      <div className={Classes.hr}>
         <hr />
       </div>
       <div className={Classes.pfp}>
