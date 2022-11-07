@@ -3,6 +3,7 @@ import UserBox from "./UserBox";
 import { NavLink } from "react-router-dom";
 import SvgMenu from "./svg/SvgMenu";
 import SvgPlus from "./svg/SvgPlus";
+import GameLink from "./GameLink";
 
 const OptionBar = (props) => {
   let name = props.nameAndSurname.split(" ");
@@ -34,6 +35,8 @@ const OptionBar = (props) => {
           <div className={Classes.text}>Stwórz grę</div>
         </NavLink>
         <hr className={Classes.hr2} />
+        <GameLink title="Wuda" />
+        <GameLink title="Mickiewicz" />
       </div>
       <UserBox nameAndSurname={name[0]} />
     </div>
