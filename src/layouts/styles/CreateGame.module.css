@@ -1,14 +1,21 @@
 .container {
   display: grid;
   grid-template-columns: 3fr 4fr;
-  grid-template-rows: 1fr 3fr 1fr 3fr 1fr 6fr;
+  grid-template-rows: 16px 3fr 16px 3fr 1fr 6fr;
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-row-gap: 15px;
 
-  padding: 30px;
+  padding: 50px;
 
   width: 100%;
   height: 100%;
+}
+
+.div1,
+.div2,
+.div5 {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.653);
 }
 
 /* Tytuł */
@@ -37,8 +44,25 @@
   grid-area: 4 / 1 / 5 / 2;
 }
 .div7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   grid-area: 5 / 1 / 6 / 3;
+}
+.div7 hr {
+  border-bottom: 1px solid #3c536f;
 }
 .div8 {
   grid-area: 6 / 1 / 7 / 3;
+}
+
+input {
+  font-family: "Roboto Slab";
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-dark);
+  outline: unset;
+  border: unset;
+  border-radius: 30px;
 }
