@@ -46,7 +46,7 @@ const OptionBar = (props) => {
       <hr />
       <div className={Classes.links}>
         <NavLink
-          to="t1"
+          to="twojegry"
           className={({ isActive }) =>
             isActive ? Classes.activeNav : Classes.inactiveNav
           }
@@ -57,7 +57,7 @@ const OptionBar = (props) => {
           <div className={Classes.text}>Twoje gry</div>
         </NavLink>
         <NavLink
-          to="t2"
+          to="stworzgre"
           className={({ isActive }) =>
             isActive ? Classes.activeNav : Classes.inactiveNav
           }
