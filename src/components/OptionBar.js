@@ -4,39 +4,42 @@ import { NavLink } from "react-router-dom";
 import SvgMenu from "./svg/SvgMenu";
 import SvgPlus from "./svg/SvgPlus";
 import GameLink from "./GameLink";
+import { useState, useEffect } from "react";
 
 const OptionBar = (props) => {
-  let name = props.nameAndSurname.split(" ");
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadedLinks, setLoadedLinks] = useState([]);
+  let links = [];
 
   let formData = new FormData();
   formData.append("user_pk", `${props.userPk}`);
 
-  let links = [];
-
-  fetch(`http://localhost/xamppprojects/finditbackend/gameLink.php`, {
-    method: "POST",
-    body: formData,
-  })
-    .then(function (response) {
-      // console.log(response);
-      return response.json();
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`http://localhost/xamppprojects/finditbackend/gameLink.php`, {
+      method: "POST",
+      body: formData,
     })
-    .then((data) => {
-      if (typeof data[0] !== "undefined") {
-        for (let i = 0; i < data.length; i++) {
-          console.log("siur");
-          links.push(<div>{data[i].title}</div>);
-        }
-        console.log("links1: ", links);
-      } else console.log("FUCK NOT WORKING");
-    });
+      .then(function (response) {
+        // console.log(response);
+        return response.json();
+      })
+      .then((data) => {
+        if (typeof data[0] !== "undefined") {
+          for (let i = 0; i < data.length; i++) {
+            console.log("siur");
+            console.log(data[i].title);
+            links.push(<GameLink key={data[i].title} title={data[i].title} />);
+          }
+          console.log("bruh", links);
+          console.log("links1: ", links);
+          setLoadedLinks(links);
+        } else console.log("FUCK NOT WORKING");
+        setIsLoading(false);
+      });
+  }, []);
 
-  console.log("links1: ", links);
-  let links2 = [
-    <GameLink key="tit1" title="test1" />,
-    <GameLink key="tit2" title="test2" />,
-  ];
-  console.log("links2: ", links2);
+  let name = props.nameAndSurname.split(" ");
 
   return (
     <div className={Classes.options}>
@@ -66,7 +69,7 @@ const OptionBar = (props) => {
           <div className={Classes.text}>Stwórz grę</div>
         </NavLink>
         <hr className={Classes.hr2} />
-        {links}
+        {loadedLinks}
       </div>
       <UserBox nameAndSurname={name[0]} />
     </div>

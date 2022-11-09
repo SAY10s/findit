@@ -16,7 +16,6 @@ const CreateGame = () => {
       </div>
       <div className={Classes.div5}>Autor: </div>
       <div className={Classes.div6}>
-        {" "}
         <input type={"text"} ref={titleRef} />
       </div>
       <div className={Classes.div7}>
