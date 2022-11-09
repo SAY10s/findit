@@ -54,6 +54,7 @@ const SignIn = (props) => {
             data[0]["email"],
             data[0]["password"]
           );
+          props.setUserPk(parseInt(data[0]["user_pk"]));
           props.setNameAndSurname(`${data[0]["name"]} ${data[0]["surname"]}`);
         } else console.log("wrong pass or log");
 

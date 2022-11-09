@@ -7,6 +7,37 @@ import GameLink from "./GameLink";
 
 const OptionBar = (props) => {
   let name = props.nameAndSurname.split(" ");
+
+  let formData = new FormData();
+  formData.append("user_pk", `${props.userPk}`);
+
+  let links = [];
+
+  fetch(`http://localhost/xamppprojects/finditbackend/gameLink.php`, {
+    method: "POST",
+    body: formData,
+  })
+    .then(function (response) {
+      // console.log(response);
+      return response.json();
+    })
+    .then((data) => {
+      if (typeof data[0] !== "undefined") {
+        for (let i = 0; i < data.length; i++) {
+          console.log("siur");
+          links.push(<div>{data[i].title}</div>);
+        }
+        console.log("links1: ", links);
+      } else console.log("FUCK NOT WORKING");
+    });
+
+  console.log("links1: ", links);
+  let links2 = [
+    <GameLink key="tit1" title="test1" />,
+    <GameLink key="tit2" title="test2" />,
+  ];
+  console.log("links2: ", links2);
+
   return (
     <div className={Classes.options}>
       <div className={Classes.logo}>
@@ -35,8 +66,7 @@ const OptionBar = (props) => {
           <div className={Classes.text}>Stwórz grę</div>
         </NavLink>
         <hr className={Classes.hr2} />
-        <GameLink title="Wuda" />
-        <GameLink title="Mickiewicz" />
+        {links}
       </div>
       <UserBox nameAndSurname={name[0]} />
     </div>

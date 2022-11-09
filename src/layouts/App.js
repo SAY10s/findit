@@ -11,6 +11,7 @@ import Panel from "./Panel";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
+  const [userPk, setUserPk] = useState("0");
   const [nameAndSurname, setNameAndSurname] = useState("Kate Bundy");
 
   let cssPath = "./styles/AppDark.css";
@@ -28,7 +29,11 @@ function App() {
         <Route
           path="/signin"
           element={
-            <SignIn isDark={isDark} setNameAndSurname={setNameAndSurname} />
+            <SignIn
+              isDark={isDark}
+              setNameAndSurname={setNameAndSurname}
+              setUserPk={setUserPk}
+            />
           }
         />
         <Route
@@ -37,7 +42,13 @@ function App() {
         />
         <Route
           path="/panel/*"
-          element={<Panel isDark={isDark} nameAndSurname={nameAndSurname} />}
+          element={
+            <Panel
+              isDark={isDark}
+              nameAndSurname={nameAndSurname}
+              userPk={userPk}
+            />
+          }
         />
         <Route
           path="/test"
