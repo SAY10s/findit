@@ -25,6 +25,7 @@ const OptionBar = (props) => {
         return response.json();
       })
       .then((data) => {
+        links = [];
         if (typeof data[0] !== "undefined") {
           for (let i = 0; i < data.length; i++) {
             console.log("siur");
