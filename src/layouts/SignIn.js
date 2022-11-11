@@ -31,16 +31,10 @@ const SignIn = (props) => {
     formData.append("password", `${enteredPassword}`);
 
     fetch(`http://localhost/xamppprojects/finditbackend/login.php`, {
-      // mode: "no-cors",
-      // credentials: "include",
       method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
       body: formData,
     })
       .then(function (response) {
-        // console.log(response.json());
         return response.json();
       })
       .then((data) => {
@@ -67,7 +61,6 @@ const SignIn = (props) => {
 
   return (
     <div className={Classes.loginBox}>
-      {/* <div className={Classes.text}>Zaloguj się</div> */}
       <form>
         <div
           className={`${Classes.userBox} ${Classes.in1} ${

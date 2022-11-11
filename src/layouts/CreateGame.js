@@ -1,13 +1,42 @@
 import Classes from "./styles/CreateGame.module.css";
 import { useRef } from "react";
-
-const CreateGame = () => {
+import { useNavigate } from "react-router";
+const CreateGame = (props) => {
   const titleRef = useRef();
   const descriptionRef = useRef();
   const authorRef = useRef();
 
+  const navigate = useNavigate();
+  function wait(time) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, time);
+    });
+  }
+  async function goToPage(url = "/XDD", time = 1200) {
+    await wait(time);
+    navigate(url);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    let formData = new FormData();
+    const title = titleRef.current.value;
+    const description = descriptionRef.current.value;
+
+    formData.append("title", `${title}`);
+    formData.append("description", `${description}`);
+    formData.append("author", `${props.userPk}`);
+
+    fetch(`http://localhost/xamppprojects/finditbackend/createGame.php`, {
+      method: "POST",
+      body: formData,
+    }).then((data) => {
+      console.log("here");
+      goToPage(`/panel/${title}`, 0);
+    });
+  }
   return (
-    <div className={Classes.container}>
+    <form className={Classes.container}>
       <div className={Classes.div1}>Tytuł: </div>
       <div className={Classes.div2}>Opis: </div>
       <div className={Classes.div3}>
@@ -23,8 +52,10 @@ const CreateGame = () => {
       <div className={Classes.div7}>
         <hr />
       </div>
-      <div className={Classes.div8}>Tabelka</div>
-    </div>
+      <div className={Classes.div8}>
+        <button onClick={handleSubmit}>Stwórz grę</button>
+      </div>
+    </form>
   );
 };
 

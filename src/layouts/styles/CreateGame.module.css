@@ -66,3 +66,13 @@ input {
   border: unset;
   border-radius: 30px;
 }
+button {
+  font-family: "Roboto Slab";
+  font-size: 24px;
+  width: 25%;
+  height: 25%;
+  background-color: var(--background-color-dark);
+  outline: unset;
+  border: unset;
+  border-radius: 30px;
+}

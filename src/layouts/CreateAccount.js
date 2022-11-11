@@ -40,12 +40,7 @@ const CreateAccount = (props) => {
     formData.append("password2", `${enteredPassword2}`);
 
     fetch(`http://localhost/xamppprojects/finditbackend/register.php`, {
-      // mode: "no-cors",
-      // credentials: "include",
       method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
       body: formData,
     }).then((data) => {
       goToPage("/signin");
