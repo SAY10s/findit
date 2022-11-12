@@ -5,7 +5,7 @@ import SvgArrowRight from "./svg/SvgArrowRight";
 const GameLink = (props) => {
   return (
     <NavLink
-      to={props.title}
+      to={`gra/${props.title}`}
       className={({ isActive }) =>
         isActive ? Classes.activeNav : Classes.inactiveNav
       }

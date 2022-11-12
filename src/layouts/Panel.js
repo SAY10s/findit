@@ -3,6 +3,7 @@ import OptionBar from "../components/OptionBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateGame from "./CreateGame";
 import YourGames from "./YourGames";
+import Game from "./Game";
 
 const Panel = (props) => {
   return (
@@ -20,6 +21,7 @@ const Panel = (props) => {
             path="/twojegry"
             element={<YourGames userPk={props.userPk} />}
           />
+          <Route path="/gra/*" element={<Game userPk={props.userPk} />} />
         </Routes>
       </div>
     </div>
