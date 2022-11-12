@@ -1,5 +1,5 @@
 import Classes from "./styles/CreateAccount.module.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const CreateAccount = (props) => {
