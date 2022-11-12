@@ -1,6 +1,7 @@
 import Classes from "./styles/CreateGame.module.css";
 import { useRef } from "react";
 import { useNavigate } from "react-router";
+
 const CreateGame = (props) => {
   const titleRef = useRef();
   const descriptionRef = useRef();
