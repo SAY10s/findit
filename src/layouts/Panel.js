@@ -1,13 +1,12 @@
 import "./styles/Panel.css";
 import OptionBar from "../components/OptionBar";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateGame from "./CreateGame";
 import YourGames from "./YourGames";
 import Game from "./Game";
 
 const Panel = (props) => {
   return (
-    // <Router>
     <div className="container">
       <OptionBar nameAndSurname={props.nameAndSurname} userPk={props.userPk} />
       <div className="content">
@@ -25,7 +24,6 @@ const Panel = (props) => {
         </Routes>
       </div>
     </div>
-    // </Router>
   );
 };
 
