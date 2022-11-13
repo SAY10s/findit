@@ -1,11 +1,12 @@
 import { useLocation } from "react-router";
 import Classes from "./styles/CreateGame.module.css";
 import { useState, useEffect } from "react";
+import TaskTable from "../components/TaskTable";
 
 const Game = (props) => {
   const sampleLocation = useLocation();
-  console.log(sampleLocation);
 
+  const [gamePk, setGamePk] = useState("0");
   const [title, setTitle] = useState("(Tit)le Holder");
   const [description, setDescription] = useState(
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio impedit consequatur eius labore saepe? Laboriosam nam repudiandae ad molestiae nihil aut tempora veritatis odit distinctio, nulla magnam a voluptatem!"
@@ -26,9 +27,12 @@ const Game = (props) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data[0].title, data[0].description);
+        console.log(
+          `Tytuł: ${data[0].title} Opis: ${data[0].description} GamePk: ${data[0].game_pk}`
+        );
         setTitle(data[0].title);
         setDescription(data[0].description);
+        setGamePk(data[0].game_pk);
       });
   }, [sampleLocation]);
 
@@ -45,7 +49,9 @@ const Game = (props) => {
       <div className={Classes.div7}>
         <hr />
       </div>
-      <div className={Classes.div8}>tabelka </div>
+      <div className={Classes.div8}>
+        <TaskTable gamePk={gamePk} />
+      </div>
     </form>
   );
 };

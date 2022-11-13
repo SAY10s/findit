@@ -1,0 +1,9 @@
+.taskTable {
+  display: flex;
+}
+.task {
+  display: flex;
+}
+.task div {
+  padding: 10px 30px;
+}
