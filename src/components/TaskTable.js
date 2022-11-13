@@ -2,10 +2,13 @@ import Classes from "./styles/task.module.css";
 import { useLocation } from "react-router";
 import Task from "./Task";
 import { useState, useEffect } from "react";
+import { render } from "@testing-library/react";
 
 const TaskTable = (props) => {
   const sampleLocation = useLocation();
   const [loadedTasks, setLoadedTasks] = useState([]);
+  const [currentNewestTaskId, setCurrentNewestTaskId] = useState(0);
+  const [renderPlz, setRenderPlz] = useState(0);
   let tasks = [];
 
   let formData = new FormData();
@@ -19,9 +22,27 @@ const TaskTable = (props) => {
 
   function handleAdd(e) {
     e.preventDefault();
+    let formData = new FormData();
+
+    alert(currentNewestTaskId);
     newQuestion = prompt("Podaj pytanie: ");
     newAnswer = prompt("Podaj odpowiedź: ");
     newLocation = prompt("Podaj lokację");
+
+    formData.append("question", `${newQuestion}`);
+    formData.append("answer", `${newAnswer}`);
+    formData.append("location", `${newLocation}`);
+    formData.append("id", `${currentNewestTaskId}`);
+    formData.append("idGry", `${props.gamePk}`);
+
+    fetch(`http://localhost/xamppprojects/finditbackend/createTask.php`, {
+      method: "POST",
+      body: formData,
+    }).then((data) => {
+      console.log("ADDED TASK chyba");
+      // goToPage(`/panel/${title}`, 0);
+      setRenderPlz(Math.random() * 3);
+    });
   }
 
   useEffect(() => {
@@ -44,16 +65,19 @@ const TaskTable = (props) => {
                 question={data[i].question}
                 answer={data[i].answer}
                 location={data[i].location}
+                id={data[i].question_pk}
               />
             );
+            setCurrentNewestTaskId(data[i].in_game_id);
           }
           setLoadedTasks(tasks);
         } else {
           console.log("2FUCK NOT WORKING2");
           setLoadedTasks([]);
+          setCurrentNewestTaskId(0);
         }
       });
-  }, [props.gamePk]);
+  }, [props.gamePk, renderPlz]);
 
   return (
     <>
