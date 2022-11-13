@@ -21,19 +21,14 @@ const OptionBar = (props) => {
       body: formData,
     })
       .then(function (response) {
-        // console.log(response);
         return response.json();
       })
       .then((data) => {
         links = [];
         if (typeof data[0] !== "undefined") {
           for (let i = 0; i < data.length; i++) {
-            console.log("siur");
-            console.log(data[i].title);
             links.push(<GameLink key={data[i].title} title={data[i].title} />);
           }
-          console.log("bruh", links);
-          console.log("links1: ", links);
           setLoadedLinks(links);
         } else console.log("FUCK NOT WORKING");
         setIsLoading(false);

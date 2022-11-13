@@ -20,7 +20,15 @@ const Panel = (props) => {
             path="/twojegry"
             element={<YourGames userPk={props.userPk} />}
           />
-          <Route path="/gra/*" element={<Game userPk={props.userPk} />} />
+          <Route
+            path="/gra/*"
+            element={
+              <Game
+                userPk={props.userPk}
+                nameAndSurname={props.nameAndSurname}
+              />
+            }
+          />
         </Routes>
       </div>
     </div>
