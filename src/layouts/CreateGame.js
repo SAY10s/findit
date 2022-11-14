@@ -32,8 +32,9 @@ const CreateGame = (props) => {
       method: "POST",
       body: formData,
     }).then((data) => {
-      console.log("here");
-      goToPage(`/panel/${title}`, 0);
+      console.log("!!!here");
+      props.setGameAmount(Math.random() * 3);
+      goToPage(`/panel/gra/${title}`, 0);
     });
   }
   return (

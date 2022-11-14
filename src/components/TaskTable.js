@@ -40,7 +40,6 @@ const TaskTable = (props) => {
       body: formData,
     }).then((data) => {
       console.log("ADDED TASK chyba");
-      // goToPage(`/panel/${title}`, 0);
       setRenderPlz(Math.random() * 3);
     });
   }

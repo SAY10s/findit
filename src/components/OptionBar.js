@@ -7,7 +7,6 @@ import GameLink from "./GameLink";
 import { useState, useEffect } from "react";
 
 const OptionBar = (props) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [loadedLinks, setLoadedLinks] = useState([]);
   let links = [];
 
@@ -15,12 +14,13 @@ const OptionBar = (props) => {
   formData.append("user_pk", `${props.userPk}`);
 
   useEffect(() => {
-    setIsLoading(true);
     fetch(`http://localhost/xamppprojects/finditbackend/gameLink.php`, {
       method: "POST",
       body: formData,
     })
       .then(function (response) {
+        console.log("LOADOWANIE");
+
         return response.json();
       })
       .then((data) => {
@@ -31,9 +31,8 @@ const OptionBar = (props) => {
           }
           setLoadedLinks(links);
         } else console.log("FUCK NOT WORKING");
-        setIsLoading(false);
       });
-  }, []);
+  }, [props.gameAmount]);
 
   let name = props.nameAndSurname.split(" ");
 

@@ -4,17 +4,31 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateGame from "./CreateGame";
 import YourGames from "./YourGames";
 import Game from "./Game";
+import { useState } from "react";
 
 const Panel = (props) => {
+  const [gameAmount, setGameAmount] = useState(0);
+
   return (
     <div className="container">
-      <OptionBar nameAndSurname={props.nameAndSurname} userPk={props.userPk} />
+      <OptionBar
+        nameAndSurname={props.nameAndSurname}
+        userPk={props.userPk}
+        setGameAmount={setGameAmount}
+        gameAmount={gameAmount}
+      />
       <div className="content">
         <Routes>
           <Route path="/" element={<div></div>} />
           <Route
             path="/stworzgre"
-            element={<CreateGame userPk={props.userPk} />}
+            element={
+              <CreateGame
+                userPk={props.userPk}
+                setGameAmount={setGameAmount}
+                gameAmout={gameAmount}
+              />
+            }
           />
           <Route
             path="/twojegry"
