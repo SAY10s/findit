@@ -5,6 +5,7 @@ import CreateGame from "./CreateGame";
 import YourGames from "./YourGames";
 import Game from "./Game";
 import { useState } from "react";
+import Answer from "./Answer";
 
 const Panel = (props) => {
   const [gameAmount, setGameAmount] = useState(0);
@@ -43,6 +44,7 @@ const Panel = (props) => {
               />
             }
           />
+          <Route path="/odpowiedz/*" element={<Answer />} />
         </Routes>
       </div>
     </div>
