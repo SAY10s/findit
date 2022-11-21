@@ -45,7 +45,11 @@ const CreateGame = (props) => {
         <input type={"text"} ref={titleRef} />
       </div>
       <div className={Classes.div4}>
-        <input type={"text"} ref={descriptionRef} />
+        <input
+          type={"text"}
+          ref={descriptionRef}
+          className={Classes.description}
+        />
       </div>
       <div className={Classes.div5}>Autor: </div>
       <div className={Classes.div6}>

@@ -40,11 +40,17 @@ const Game = (props) => {
     <form className={Classes.container}>
       <div className={Classes.div1}>Tytuł: </div>
       <div className={Classes.div2}>Opis: </div>
-      <div className={Classes.div3}>{title}</div>
-      <div className={Classes.div4}>{description}</div>
+      <div className={Classes.div3}>
+        <div className={Classes.input}>{title}</div>
+      </div>
+      <div className={Classes.div4}>
+        <div className={Classes.input}>{description}</div>
+      </div>
       <div className={Classes.div5}>Autor: </div>
       <div className={Classes.div6}>
-        {props.userPk} {props.nameAndSurname}
+        <div className={Classes.input}>
+          {props.userPk} {props.nameAndSurname}
+        </div>
       </div>
       <div className={Classes.div7}>
         <hr />
