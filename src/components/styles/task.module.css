@@ -1,11 +1,32 @@
 .taskTable {
   display: flex;
   flex-direction: column;
+
+  border-radius: 30px;
+  background-color: #1b222b;
+  height: 80%;
+  padding: 0px 30px;
 }
 .task {
   font-size: 26px;
   display: flex;
 }
 .task div {
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  /* padding: 10px 20px; */
+}
+
+button {
+  height: 92px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 1fr 5fr repeat(2, 3fr) 1fr;
+  grid-template-rows: 79px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  border-bottom: 1px solid #3c536f;
 }
