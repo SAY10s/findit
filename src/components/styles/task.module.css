@@ -4,8 +4,8 @@
 
   border-radius: 30px;
   background-color: #1b222b;
-  height: 80%;
-  padding: 0px 30px;
+  min-height: 95%;
+  padding: 0px 35px;
 }
 .task {
   font-size: 26px;
@@ -22,11 +22,40 @@ button {
 }
 
 .task {
+  font-size: 20px;
   display: grid;
-  grid-template-columns: 1fr 5fr repeat(2, 3fr) 1fr;
+  grid-template-columns: 0.5fr 5fr repeat(2, 3fr) 1fr;
   grid-template-rows: 79px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
   border-bottom: 1px solid #3c536f;
+}
+
+.tableHeader {
+  font-size: 18px;
+
+  display: grid;
+  grid-template-columns: 0.5fr 5fr repeat(2, 3fr) 1fr;
+  grid-template-rows: 36px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  padding: 0px 35px;
+}
+
+.tableHeader div {
+  color: rgba(255, 255, 255, 0.653);
+  display: flex;
+  /* align-items: center; */
+}
+
+.task div:nth-child(1) {
+  padding-left: 15px;
+  /* background-color: rgb(19, 66, 66); */
+}
+.task:last-child div {
+  /* background-color: black; */
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.3);
 }

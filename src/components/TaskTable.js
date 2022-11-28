@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 import Task from "./Task";
 import { useState, useEffect } from "react";
 import { render } from "@testing-library/react";
+import SvgPlus from "./svg/SvgPlus";
 
 const TaskTable = (props) => {
   const sampleLocation = useLocation();
@@ -80,8 +81,26 @@ const TaskTable = (props) => {
 
   return (
     <>
-      <div className={Classes.taskTable}>{loadedTasks}</div>
-      <button onClick={handleAdd}>Dodaj zadnie!</button>
+      <div className={Classes.tableHeader}>
+        <div></div>
+        <div>Pytanie: </div>
+        <div>Odpowiedź: </div>
+        <div>Lokalizajca: </div>
+        {/* <div onClick={handleShow}>Odp</div> */}
+      </div>
+      <div className={Classes.taskTable}>
+        {loadedTasks}
+        <div className={Classes.task} onClick={handleAdd}>
+          <div>
+            <SvgPlus color="#ffffff" />
+          </div>
+          <div>Miejsce na pytanie</div>
+          <div>Odp1;Odp2;Odp3</div>
+          <div>Lokalizacja kodu QR</div>
+          <div>Odp</div>
+        </div>
+      </div>
+      {/* <button onClick={handleAdd}>Dodaj zadnie!</button> */}
     </>
   );
 };
