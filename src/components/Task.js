@@ -1,5 +1,7 @@
 import Classes from "./styles/task.module.css";
 import { useNavigate } from "react-router";
+import SvgDownload from "./svg/SvgDownload";
+import SvgEye from "./svg/SvgEye";
 
 const Task = (props) => {
   const navigate = useNavigate();
@@ -12,7 +14,9 @@ const Task = (props) => {
       <div>{props.question}</div>
       <div>{props.answer}</div>
       <div>{props.location}</div>
-      <div onClick={handleShow}>Odp</div>
+      <div onClick={handleShow}>
+        <SvgEye color="#ffffff" />
+      </div>
     </div>
   );
 };

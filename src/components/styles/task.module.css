@@ -54,6 +54,13 @@ button {
   padding-left: 15px;
   /* background-color: rgb(19, 66, 66); */
 }
+
+.task div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 25px;
+}
+
 .task:last-child div {
   /* background-color: black; */
   cursor: pointer;
