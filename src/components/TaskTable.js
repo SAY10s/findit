@@ -97,7 +97,7 @@ const TaskTable = (props) => {
           <div>Miejsce na pytanie</div>
           <div>Odp1;Odp2;Odp3</div>
           <div>Lokalizacja kodu QR</div>
-          <div>Odp</div>
+          <div></div>
         </div>
       </div>
       {/* <button onClick={handleAdd}>Dodaj zadnie!</button> */}

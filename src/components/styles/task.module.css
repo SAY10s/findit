@@ -51,6 +51,7 @@ button {
 }
 
 .task div:nth-child(1) {
+  cursor: pointer;
   padding-left: 15px;
   /* background-color: rgb(19, 66, 66); */
 }
@@ -59,10 +60,14 @@ button {
   display: flex;
   justify-content: flex-end;
   padding-right: 25px;
+  cursor: pointer;
 }
 
 .task:last-child div {
   /* background-color: black; */
   cursor: pointer;
   color: rgba(255, 255, 255, 0.3);
+}
+.task canvas {
+  display: none;
 }
