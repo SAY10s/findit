@@ -2,6 +2,7 @@ import { useLocation } from "react-router";
 import Classes from "./styles/CreateGame.module.css";
 import { useState, useEffect } from "react";
 import TaskTable from "../components/TaskTable";
+import { QRCodeCanvas } from "qrcode.react";
 
 const Game = (props) => {
   const sampleLocation = useLocation();
@@ -36,29 +37,59 @@ const Game = (props) => {
       });
   }, [sampleLocation]);
 
+  const downloadQRCode = () => {
+    // Generate download with use canvas and stream
+    const canvas = document.getElementById("qr-gen");
+    const pngUrl = canvas
+      .toDataURL("image/png")
+      .replace("image/png", "image/octet-stream");
+    let downloadLink = document.createElement("a");
+    downloadLink.href = pngUrl;
+    downloadLink.download = `${"siur"}.png`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
   return (
-    <form className={Classes.container}>
-      <div className={Classes.div1}>Tytuł: </div>
-      <div className={Classes.div2}>Opis: </div>
-      <div className={Classes.div3}>
-        <div className={Classes.input}>{title}</div>
-      </div>
-      <div className={Classes.div4}>
-        <div className={Classes.input}>{description}</div>
-      </div>
-      <div className={Classes.div5}>Autor: </div>
-      <div className={Classes.div6}>
-        <div className={Classes.input}>
-          {props.userPk} {props.nameAndSurname}
-        </div>
-      </div>
-      <div className={Classes.div7}>
-        <hr />
-      </div>
-      <div className={Classes.div8}>
-        <TaskTable gamePk={gamePk} />
-      </div>
-    </form>
+    // <form className={Classes.container}>
+    //   <div className={Classes.div1}>Tytuł: </div>
+    //   <div className={Classes.div2}>Opis: </div>
+    //   <div className={Classes.div3}>
+    //     <div className={Classes.input}>{title}</div>
+    //   </div>
+    //   <div className={Classes.div4}>
+    //     <div className={Classes.input}>{description}</div>
+    //   </div>
+    //   <div className={Classes.div5}>Autor: </div>
+    //   <div className={Classes.div6}>
+    //     <div className={Classes.input}>
+    //       {props.userPk} {props.nameAndSurname}
+    //     </div>
+    //   </div>
+    //   <div className={Classes.div7}>
+    //     <hr />
+    //   </div>
+    //   <div className={Classes.div8}>
+    //     <TaskTable gamePk={gamePk} />
+    //   </div>
+    // </form>
+    <>
+      Siur{" "}
+      <QRCodeCanvas
+        id="qr-gen"
+        value={"siur"}
+        size={256}
+        level={"H"}
+        includeMargin={true}
+      />
+      <p>
+        Click <for>" "</for>
+        <button type="button" onClick={downloadQRCode}>
+          Download Code
+        </button>
+      </p>
+    </>
   );
 };
 
