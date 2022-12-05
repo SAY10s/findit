@@ -98,7 +98,7 @@ const CreateAccount = (props) => {
             isUnloading ? Classes.out1 : ""
           } `}
         >
-          <input type={"text"} required=" " ref={password1Ref} />
+          <input type={"password"} required=" " ref={password1Ref} />
           <label>
             <i
               className={`${Classes.fa} ${Classes.faUser}`}
@@ -133,7 +133,7 @@ const CreateAccount = (props) => {
           <div className={Classes.createAccount}>
             Masz juz konto?{" "}
             <Link to={"/signin"}>
-              <span id="registerLink">Zaloguj się!</span>
+              <span id="registerLink">Zarejestruj się!</span>
             </Link>
           </div>
         </div>

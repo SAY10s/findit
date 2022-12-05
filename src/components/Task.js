@@ -20,9 +20,13 @@ const Task = (props) => {
     document.body.removeChild(downloadLink);
   }
 
+  function handleShow() {
+    navigate(`/panel/odpowiedzi/${props.id}`);
+  }
+
   return (
     <div className={Classes.task}>
-      <div>
+      <div onClick={handleShow}>
         <SvgEye color="#ffffff" />
       </div>
       <div>{props.question}</div>
