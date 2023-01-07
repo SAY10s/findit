@@ -1,5 +1,6 @@
 import Classes from "../styles/question.module.css";
 import { useRef } from "react";
+import SvgDownload from "../svg/SvgDownload";
 
 const MilionairesQuesstion = (props) => {
   const questionRef = useRef();
@@ -97,7 +98,9 @@ const MilionairesQuesstion = (props) => {
             );
           }}
         />
-        <button className={Classes.delete}>!</button>
+        <button className={Classes.delete}>
+          <SvgDownload color="#ffffff" />
+        </button>
       </div>
     </div>
   );

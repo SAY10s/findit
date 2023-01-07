@@ -1,5 +1,6 @@
 import Classes from "../styles/question.module.css";
 import { useRef } from "react";
+import SvgDownload from "../svg/SvgDownload";
 
 const ClosedQuestionReady = (props) => {
   return (
@@ -27,7 +28,9 @@ const ClosedQuestionReady = (props) => {
           defaultValue={props.location}
           className={Classes.location}
         />
-        <button className={Classes.delete}>!</button>
+        <button className={Classes.delete}>
+          <SvgDownload color="#ffffff" />
+        </button>
       </div>
     </div>
   );
