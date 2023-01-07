@@ -7,10 +7,10 @@ const Game = (props) => {
   const sampleLocation = useLocation();
 
   const [gamePk, setGamePk] = useState("0");
-  const [title, setTitle] = useState("(Tit)le Holder");
-  const [description, setDescription] = useState(
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio impedit consequatur eius labore saepe? Laboriosam nam repudiandae ad molestiae nihil aut tempora veritatis odit distinctio, nulla magnam a voluptatem!"
-  );
+  // const [title, setTitle] = useState("(Tit)le Holder");
+  // const [description, setDescription] = useState("Lorem ipsum");
+  const [currentNewestTaskId, setCurrentNewestTaskId] = useState(0);
+  const [renderPlz, setRenderPlz] = useState(0);
 
   let game = sampleLocation.pathname.split("/panel/gra/").join("");
   console.log(`Tytuł: ${game}`);
@@ -30,15 +30,33 @@ const Game = (props) => {
         console.log(
           `Tytuł: ${data[0].title} Opis: ${data[0].description} GamePk: ${data[0].game_pk}`
         );
-        setTitle(data[0].title);
-        setDescription(data[0].description);
+        // setTitle(data[0].title);
+        // setDescription(data[0].description);
         setGamePk(data[0].game_pk);
       });
   }, [sampleLocation]);
 
-  function save() {
-    alert(`Question: ${question}\nAnswer: ${answer}\nLocation: ${location}`);
+  //----------------------------------
+
+  function handleAdd(e) {
+    e.preventDefault();
+    let formData = new FormData();
+
+    formData.append("question", `${question}`);
+    formData.append("answer", `${answer}`);
+    formData.append("location", `${location}`);
+    formData.append("id", `${currentNewestTaskId}`);
+    formData.append("idGry", `${gamePk}`);
+
+    fetch(`http://localhost/niko/finditbackend/createTask.php`, {
+      method: "POST",
+      body: formData,
+    }).then((data) => {
+      console.log("ADDED TASK chyba");
+      setRenderPlz(Math.random() * 3);
+    });
   }
+
   function setData(question, answer, location) {
     setQuestion(question);
     setAnswer(answer);
@@ -51,8 +69,14 @@ const Game = (props) => {
 
   return (
     <div className={Classes.container}>
-      <ListOfQuestions setData={setData} />
-      <button className={Classes.zapisz} onClick={save}>
+      <ListOfQuestions
+        renderPlz={renderPlz}
+        setRenderPlz={setRenderPlz}
+        setData={setData}
+        setCurrentNewestTaskId={setCurrentNewestTaskId}
+        gamePk={gamePk}
+      />
+      <button className={Classes.zapisz} onClick={handleAdd}>
         Zapisz
       </button>
     </div>

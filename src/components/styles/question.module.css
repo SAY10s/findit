@@ -1,8 +1,21 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100vh;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.list::-webkit-scrollbar {
+  display: none;
+}
+
 .questionWrapper {
   width: 876px;
   border: 3px solid #3c536f;
   border-radius: 30px;
   padding: 20px;
+  margin: 35px;
 }
 .top {
   margin-bottom: 20px;
