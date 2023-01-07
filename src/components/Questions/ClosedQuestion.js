@@ -14,6 +14,13 @@ const ClosedQuestion = (props) => {
           ref={questionRef}
           className={Classes.questionInput}
           placeholder="Pytanie"
+          onChange={() => {
+            props.setData(
+              questionRef.current.value,
+              answerRef.current.value,
+              locationRef.current.value
+            );
+          }}
         />
         <select>
           <option value="closed">Zamknięte</option>
@@ -27,12 +34,26 @@ const ClosedQuestion = (props) => {
           ref={answerRef}
           className={Classes.answer}
           placeholder="Odpowiedź"
+          onChange={() => {
+            props.setData(
+              questionRef.current.value,
+              answerRef.current.value,
+              locationRef.current.value
+            );
+          }}
         />
         <input
           type={"text"}
           ref={locationRef}
           className={Classes.location}
           placeholder="Lokalizacja"
+          onChange={() => {
+            props.setData(
+              questionRef.current.value,
+              answerRef.current.value,
+              locationRef.current.value
+            );
+          }}
         />
         <button className={Classes.delete}>!</button>
       </div>

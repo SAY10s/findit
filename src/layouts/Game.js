@@ -39,6 +39,11 @@ const Game = (props) => {
   function save() {
     alert(`Question: ${question}\nAnswer: ${answer}\nLocation: ${location}`);
   }
+  function setData(question, answer, location) {
+    setQuestion(question);
+    setAnswer(answer);
+    setLocation(location);
+  }
 
   const [question, setQuestion] = useState("question");
   const [answer, setAnswer] = useState("answer");
@@ -46,11 +51,7 @@ const Game = (props) => {
 
   return (
     <div className={Classes.container}>
-      <ListOfQuestions
-        setQuestion={setQuestion}
-        setAnswer={setAnswer}
-        setLocation={setLocation}
-      />
+      <ListOfQuestions setData={setData} />
       <button className={Classes.zapisz} onClick={save}>
         Zapisz
       </button>

@@ -8,11 +8,7 @@ const ListOfQuestions = (props) => {
       <div>Lista pytań</div>
       <MilionairesQuesstion />
       <OpenQuestion />
-      <ClosedQuestion
-        setQuestion={props.setQuestion}
-        setAnswer={props.setAnswer}
-        setLocation={props.setLocation}
-      />
+      <ClosedQuestion setData={props.setData} />
     </div>
   );
 };
