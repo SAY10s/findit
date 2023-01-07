@@ -30,7 +30,7 @@ const SignIn = (props) => {
     formData.append("email", `${enteredEmail}`);
     formData.append("password", `${enteredPassword}`);
 
-    fetch(`http://localhost/xamppprojects/finditbackend/login.php`, {
+    fetch(`http://localhost/niko/finditbackend/login.php`, {
       method: "POST",
       body: formData,
     })

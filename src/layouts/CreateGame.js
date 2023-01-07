@@ -28,7 +28,7 @@ const CreateGame = (props) => {
     formData.append("description", `${description}`);
     formData.append("author", `${props.userPk}`);
 
-    fetch(`http://localhost/xamppprojects/finditbackend/createGame.php`, {
+    fetch(`http://localhost/niko/finditbackend/createGame.php`, {
       method: "POST",
       body: formData,
     }).then((data) => {

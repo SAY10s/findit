@@ -39,7 +39,7 @@ const CreateAccount = (props) => {
     formData.append("password1", `${enteredPassword1}`);
     formData.append("password2", `${enteredPassword2}`);
 
-    fetch(`http://localhost/xamppprojects/finditbackend/register.php`, {
+    fetch(`http://localhost/niko/finditbackend/register.php`, {
       method: "POST",
       body: formData,
     }).then((data) => {

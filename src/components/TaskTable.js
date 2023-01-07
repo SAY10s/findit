@@ -36,7 +36,7 @@ const TaskTable = (props) => {
     formData.append("id", `${currentNewestTaskId}`);
     formData.append("idGry", `${props.gamePk}`);
 
-    fetch(`http://localhost/xamppprojects/finditbackend/createTask.php`, {
+    fetch(`http://localhost/niko/finditbackend/createTask.php`, {
       method: "POST",
       body: formData,
     }).then((data) => {
@@ -46,7 +46,7 @@ const TaskTable = (props) => {
   }
 
   useEffect(() => {
-    fetch(`http://localhost/xamppprojects/finditbackend/taskList.php`, {
+    fetch(`http://localhost/niko/finditbackend/taskList.php`, {
       method: "POST",
       body: formData,
     })

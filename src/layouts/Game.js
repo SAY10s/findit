@@ -19,7 +19,7 @@ const Game = (props) => {
   formData.append("user_pk", `${props.userPk}`);
   formData.append("title", `${game}`);
   useEffect(() => {
-    fetch(`http://localhost/xamppprojects/finditbackend/game.php`, {
+    fetch(`http://localhost/niko/finditbackend/game.php`, {
       method: "POST",
       body: formData,
     })

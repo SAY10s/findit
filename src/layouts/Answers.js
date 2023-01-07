@@ -18,7 +18,7 @@ const Answers = () => {
   let answers = [];
 
   useEffect(() => {
-    fetch(`http://localhost/xamppprojects/finditbackend/getanswer.php`, {
+    fetch(`http://localhost/niko/finditbackend/getanswer.php`, {
       method: "POST",
       body: formData,
     })
