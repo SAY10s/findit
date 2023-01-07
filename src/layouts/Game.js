@@ -7,8 +7,6 @@ const Game = (props) => {
   const sampleLocation = useLocation();
 
   const [gamePk, setGamePk] = useState("0");
-  // const [title, setTitle] = useState("(Tit)le Holder");
-  // const [description, setDescription] = useState("Lorem ipsum");
   const [currentNewestTaskId, setCurrentNewestTaskId] = useState(0);
   const [renderPlz, setRenderPlz] = useState(0);
 
@@ -30,8 +28,6 @@ const Game = (props) => {
         console.log(
           `Tytuł: ${data[0].title} Opis: ${data[0].description} GamePk: ${data[0].game_pk}`
         );
-        // setTitle(data[0].title);
-        // setDescription(data[0].description);
         setGamePk(data[0].game_pk);
       });
   }, [sampleLocation]);
