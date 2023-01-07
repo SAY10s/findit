@@ -17,7 +17,7 @@ const ClosedQuestion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              answerRef.current.value,
+              `01|${answerRef.current.value}`,
               locationRef.current.value
             );
           }}
@@ -37,7 +37,7 @@ const ClosedQuestion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              answerRef.current.value,
+              `01|${answerRef.current.value}`,
               locationRef.current.value
             );
           }}
@@ -50,7 +50,7 @@ const ClosedQuestion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              answerRef.current.value,
+              `01|${answerRef.current.value}`,
               locationRef.current.value
             );
           }}

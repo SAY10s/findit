@@ -20,7 +20,7 @@ const MilionairesQuesstion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              `milionaires|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
+              `03|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
               locationRef.current.value
             );
           }}
@@ -40,7 +40,7 @@ const MilionairesQuesstion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              `milionaires|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
+              `03|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
               locationRef.current.value
             );
           }}
@@ -53,7 +53,7 @@ const MilionairesQuesstion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              `milionaires|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
+              `03|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
               locationRef.current.value
             );
           }}
@@ -66,7 +66,7 @@ const MilionairesQuesstion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              `milionaires|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
+              `03|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
               locationRef.current.value
             );
           }}
@@ -79,7 +79,7 @@ const MilionairesQuesstion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              `milionaires|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
+              `03|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
               locationRef.current.value
             );
           }}
@@ -92,7 +92,7 @@ const MilionairesQuesstion = (props) => {
           onChange={() => {
             props.setData(
               questionRef.current.value,
-              `milionaires|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
+              `03|${answerRef1.current.value}|${answerRef2.current.value}|${answerRef3.current.value}|${answerRef4.current.value}|`,
               locationRef.current.value
             );
           }}
