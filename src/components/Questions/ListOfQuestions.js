@@ -1,5 +1,7 @@
 import MilionairesQuesstion from "./MillionairesQuestion";
+import MilionairesQuesstionReady from "./MillionairesQuestionReady";
 import OpenQuestion from "./OpenQuestion";
+import OpenQuestionReady from "./OpenQuestionReady";
 import ClosedQuestion from "./ClosedQuestion";
 import ClosedQuestionReady from "./ClosedQuestionReady";
 
@@ -24,17 +26,42 @@ const ListOfQuestions = (props) => {
         tasks = [];
         if (typeof data[0] !== "undefined") {
           console.log(data[0]);
-
           for (let i = 0; i < data.length; i++) {
-            tasks.push(
-              <ClosedQuestionReady
-                key={data[i].question_pk}
-                question={data[i].question}
-                answer={data[i].answer}
-                location={data[i].location}
-                id={data[i].question_pk}
-              />
-            );
+            let answer = data[i].answer.split("|");
+            if (answer[0] == "01") {
+              tasks.push(
+                <ClosedQuestionReady
+                  key={data[i].question_pk}
+                  question={data[i].question}
+                  answer={data[i].answer}
+                  location={data[i].location}
+                  id={data[i].question_pk}
+                />
+              );
+            } else if (answer[0] == "02") {
+              tasks.push(
+                <OpenQuestionReady
+                  key={data[i].question_pk}
+                  question={data[i].question}
+                  answer={data[i].answer}
+                  location={data[i].location}
+                  id={data[i].question_pk}
+                />
+              );
+            } else if (answer[0] == "03") {
+              tasks.push(
+                <MilionairesQuesstionReady
+                  key={data[i].question_pk}
+                  question={data[i].question}
+                  answer={data[i].answer}
+                  location={data[i].location}
+                  id={data[i].question_pk}
+                />
+              );
+            } else {
+              <div>Sus</div>;
+            }
+
             props.setCurrentNewestTaskId(data[i].in_game_id);
           }
           setLoadedTasks(tasks);
