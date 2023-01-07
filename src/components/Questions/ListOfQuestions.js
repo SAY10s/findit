@@ -48,10 +48,31 @@ const ListOfQuestions = (props) => {
 
   return (
     <div className={Classes.list}>
-      <MilionairesQuesstion />
-      <OpenQuestion />
       {loadedTasks}
-      <ClosedQuestion setData={props.setData} />
+      {props.currentTaskType}
+      <div
+        onClick={() =>
+          props.setCurrentTaskType(
+            <MilionairesQuesstion setData={props.setData} />
+          )
+        }
+      >
+        Stwórz "Milionerzy"
+      </div>
+      <div
+        onClick={() =>
+          props.setCurrentTaskType(<OpenQuestion setData={props.setData} />)
+        }
+      >
+        Stwórz "Otwarte"
+      </div>
+      <div
+        onClick={() =>
+          props.setCurrentTaskType(<ClosedQuestion setData={props.setData} />)
+        }
+      >
+        Stwórz "Zamknięte"
+      </div>
     </div>
   );
 };

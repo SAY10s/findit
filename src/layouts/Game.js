@@ -53,6 +53,7 @@ const Game = (props) => {
       body: formData,
     }).then((data) => {
       console.log("ADDED TASK chyba");
+      setCurrentTaskType("");
       setRenderPlz(Math.random() * 3);
     });
   }
@@ -67,6 +68,8 @@ const Game = (props) => {
   const [answer, setAnswer] = useState("answer");
   const [location, setLocation] = useState("location");
 
+  const [currentTaskType, setCurrentTaskType] = useState("");
+
   return (
     <div className={Classes.container}>
       <ListOfQuestions
@@ -75,6 +78,8 @@ const Game = (props) => {
         setData={setData}
         setCurrentNewestTaskId={setCurrentNewestTaskId}
         gamePk={gamePk}
+        currentTaskType={currentTaskType}
+        setCurrentTaskType={setCurrentTaskType}
       />
       <button className={Classes.zapisz} onClick={handleAdd}>
         Zapisz
