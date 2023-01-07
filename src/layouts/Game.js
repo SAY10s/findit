@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
-import Classes from "./styles/CreateGame.module.css";
 import { useState, useEffect } from "react";
-import TaskTable from "../components/TaskTable";
+import Classes from "./styles/Game.module.css";
+import ListOfQuestions from "../components/Questions/ListOfQuestions";
 
 const Game = (props) => {
   const sampleLocation = useLocation();
@@ -36,43 +36,25 @@ const Game = (props) => {
       });
   }, [sampleLocation]);
 
-  const downloadQRCode = () => {
-    // Generate download with use canvas and stream
-    const canvas = document.getElementById("qr-gen");
-    const pngUrl = canvas
-      .toDataURL("image/png")
-      .replace("image/png", "image/octet-stream");
-    let downloadLink = document.createElement("a");
-    downloadLink.href = pngUrl;
-    downloadLink.download = `${"siur"}.png`;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-  };
+  function save() {
+    alert(`Question: ${question}\nAnswer: ${answer}\nLocation: ${location}`);
+  }
+
+  const [question, setQuestion] = useState("question");
+  const [answer, setAnswer] = useState("answer");
+  const [location, setLocation] = useState("location");
 
   return (
-    <form className={Classes.container}>
-      <div className={Classes.div1}>Tytuł: </div>
-      <div className={Classes.div2}>Opis: </div>
-      <div className={Classes.div3}>
-        <div className={Classes.input}>{title}</div>
-      </div>
-      <div className={Classes.div4}>
-        <div className={Classes.input}>{description}</div>
-      </div>
-      <div className={Classes.div5}>Autor: </div>
-      <div className={Classes.div6}>
-        <div className={Classes.input}>
-          {props.userPk} {props.nameAndSurname}
-        </div>
-      </div>
-      <div className={Classes.div7}>
-        <hr />
-      </div>
-      <div className={Classes.div8}>
-        <TaskTable gamePk={gamePk} />
-      </div>
-    </form>
+    <div className={Classes.container}>
+      <ListOfQuestions
+        setQuestion={setQuestion}
+        setAnswer={setAnswer}
+        setLocation={setLocation}
+      />
+      <button className={Classes.zapisz} onClick={save}>
+        Zapisz
+      </button>
+    </div>
   );
 };
 

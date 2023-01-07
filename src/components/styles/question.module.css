@@ -1,0 +1,40 @@
+.questionWrapper {
+  width: 876px;
+  border: 3px solid #3c536f;
+  border-radius: 30px;
+  padding: 20px;
+}
+.top {
+  margin-bottom: 20px;
+}
+.questionInput {
+  width: 522px;
+  height: 60px;
+  font-size: 20px;
+}
+select {
+  width: 285px;
+  height: 60px;
+  background-color: #1b222b;
+  border-radius: 30px;
+  font-size: 16px;
+  padding-left: 30px;
+  border: none;
+  margin-left: 20px;
+}
+.answer {
+  width: 480px;
+  height: 40px;
+  font-size: 16px;
+}
+.location {
+  width: 220px;
+  height: 60px;
+  font-size: 16px;
+  margin-left: 60px;
+}
+.delete {
+  aspect-ratio: 1;
+  width: 60px;
+  margin-left: 10px;
+}
