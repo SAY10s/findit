@@ -4,7 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 
 const CreateAccount = (props) => {
   const [isUnloading, setIsUnloading] = useState(false);
-
   const nameRef = useRef();
   const surnameRef = useRef();
   const emailRef = useRef();
@@ -39,7 +38,7 @@ const CreateAccount = (props) => {
     formData.append("password1", `${enteredPassword1}`);
     formData.append("password2", `${enteredPassword2}`);
 
-    fetch(`http://localhost/niko/finditbackend/register.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/register.php`, {
       method: "POST",
       body: formData,
     }).then((data) => {

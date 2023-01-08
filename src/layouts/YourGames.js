@@ -9,7 +9,7 @@ const YourGames = (props) => {
   formData.append("user_pk", `${props.userPk}`);
 
   useEffect(() => {
-    fetch(`http://localhost/niko/finditbackend/gameLink.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/gameLink.php`, {
       method: "POST",
       body: formData,
     })

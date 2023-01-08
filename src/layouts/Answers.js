@@ -18,7 +18,7 @@ const Answers = () => {
   let answers = [];
 
   useEffect(() => {
-    fetch(`http://localhost/niko/finditbackend/getanswer.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/getanswer.php`, {
       method: "POST",
       body: formData,
     })

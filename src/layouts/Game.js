@@ -17,7 +17,7 @@ const Game = (props) => {
   formData.append("user_pk", `${props.userPk}`);
   formData.append("title", `${game}`);
   useEffect(() => {
-    fetch(`http://localhost/niko/finditbackend/game.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/game.php`, {
       method: "POST",
       body: formData,
     })
@@ -44,7 +44,7 @@ const Game = (props) => {
     formData.append("id", `${currentNewestTaskId}`);
     formData.append("idGry", `${gamePk}`);
 
-    fetch(`http://localhost/niko/finditbackend/createTask.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/createTask.php`, {
       method: "POST",
       body: formData,
     }).then((data) => {

@@ -28,7 +28,7 @@ const CreateGame = (props) => {
     formData.append("description", `${description}`);
     formData.append("author", `${props.userPk}`);
 
-    fetch(`http://localhost/niko/finditbackend/createGame.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/createGame.php`, {
       method: "POST",
       body: formData,
     }).then((data) => {

@@ -15,7 +15,7 @@ const ListOfQuestions = (props) => {
   let formData = new FormData();
   formData.append("game_id", `${props.gamePk}`);
   useEffect(() => {
-    fetch(`http://localhost/niko/finditbackend/taskList.php`, {
+    fetch(`https://findit.zs6sobieski.pl/php/taskList.php`, {
       method: "POST",
       body: formData,
     })
