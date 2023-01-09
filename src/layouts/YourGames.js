@@ -21,7 +21,13 @@ const YourGames = (props) => {
           for (let i = 0; i < data.length; i++) {
             console.log("siur");
             console.log(data[i].title);
-            links.push(<GameLink key={data[i].title} title={data[i].title} />);
+            links.push(
+              <GameLink
+                key={data[i].game_pk}
+                title={data[i].title}
+                gamePk={data[i].game_pk}
+              />
+            );
           }
           console.log("bruh", links);
           console.log("links1: ", links);

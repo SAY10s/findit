@@ -27,7 +27,13 @@ const OptionBar = (props) => {
         links = [];
         if (typeof data[0] !== "undefined") {
           for (let i = 0; i < data.length; i++) {
-            links.push(<GameLink key={data[i].title} title={data[i].title} />);
+            links.push(
+              <GameLink
+                key={data[i].game_pk}
+                title={data[i].title}
+                gamePk={data[i].game_pk}
+              />
+            );
           }
           setLoadedLinks(links);
         } else console.log("FUCK NOT WORKING");

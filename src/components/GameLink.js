@@ -11,7 +11,9 @@ const GameLink = (props) => {
       }
     >
       <SvgArrowRight color={"#ffffff"} />
-      <div className={Classes.text}>{props.title}</div>
+      <div className={Classes.text}>
+        {props.title} {props.gamePk}
+      </div>
     </NavLink>
   );
 };
