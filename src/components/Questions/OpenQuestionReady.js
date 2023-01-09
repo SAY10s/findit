@@ -3,8 +3,10 @@ import { useRef } from "react";
 import SvgDownload from "../svg/SvgDownload";
 import SvgEye from "../svg/SvgEye";
 import { QRCodeCanvas } from "qrcode.react";
+import { useNavigate } from "react-router";
 
 const OpenQuestion = (props) => {
+  const navigate = useNavigate();
   function handleDownload() {
     const canvas = document.getElementById(props.id);
     const pngUrl = canvas
@@ -17,7 +19,9 @@ const OpenQuestion = (props) => {
     downloadLink.click();
     document.body.removeChild(downloadLink);
   }
-  function handleSeeAnswer() {}
+  function handleSeeAnswer() {
+    navigate(`/panel/odpowiedzi/${props.id}`);
+  }
   return (
     <div className={Classes.questionWrapper}>
       <div className={Classes.top}>

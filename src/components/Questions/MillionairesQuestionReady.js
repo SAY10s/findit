@@ -2,8 +2,10 @@ import Classes from "../styles/question.module.css";
 import SvgDownload from "../svg/SvgDownload";
 import SvgEye from "../svg/SvgEye";
 import { QRCodeCanvas } from "qrcode.react";
+import { useNavigate } from "react-router";
 
 const MilionairesQuesstion = (props) => {
+  const navigate = useNavigate();
   function handleDownload() {
     const canvas = document.getElementById(props.id);
     const pngUrl = canvas
@@ -17,7 +19,9 @@ const MilionairesQuesstion = (props) => {
     document.body.removeChild(downloadLink);
   }
   let answer = props.answer.split("|");
-  function handleSeeAnswer() {}
+  function handleSeeAnswer() {
+    navigate(`/panel/odpowiedzi/${props.id}`);
+  }
 
   return (
     <div className={Classes.questionWrapper}>
