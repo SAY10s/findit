@@ -1,5 +1,6 @@
 import Classes from "../styles/question.module.css";
 import SvgDownload from "../svg/SvgDownload";
+import SvgEye from "../svg/SvgEye";
 import { QRCodeCanvas } from "qrcode.react";
 
 const MilionairesQuesstion = (props) => {
@@ -16,6 +17,8 @@ const MilionairesQuesstion = (props) => {
     document.body.removeChild(downloadLink);
   }
   let answer = props.answer.split("|");
+  function handleSeeAnswer() {}
+
   return (
     <div className={Classes.questionWrapper}>
       <div className={Classes.top}>
@@ -58,6 +61,9 @@ const MilionairesQuesstion = (props) => {
         />
         <button className={Classes.delete} onClick={handleDownload}>
           <SvgDownload color="#ffffff" />
+        </button>
+        <button className={Classes.delete} onClick={handleSeeAnswer}>
+          <SvgEye color="#ffffff" />
         </button>
         <div className={Classes.hide}>
           <QRCodeCanvas

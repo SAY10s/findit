@@ -1,6 +1,7 @@
 import Classes from "../styles/question.module.css";
 import { useRef } from "react";
 import SvgDownload from "../svg/SvgDownload";
+import SvgEye from "../svg/SvgEye";
 import { QRCodeCanvas } from "qrcode.react";
 
 const ClosedQuestionReady = (props) => {
@@ -16,7 +17,9 @@ const ClosedQuestionReady = (props) => {
     downloadLink.click();
     document.body.removeChild(downloadLink);
   }
+  let answer = props.answer.split("|");
 
+  function handleSeeAnswer() {}
   return (
     <div className={Classes.questionWrapper}>
       <div className={Classes.top}>
@@ -34,7 +37,7 @@ const ClosedQuestionReady = (props) => {
       <div>
         <input
           type={"text"}
-          defaultValue={props.answer}
+          defaultValue={answer[1]}
           className={Classes.answer}
         />
         <input
@@ -43,8 +46,11 @@ const ClosedQuestionReady = (props) => {
           className={Classes.location}
         />
         <button className={Classes.delete} onClick={handleDownload}>
+          <SvgDownload color="#ffffff" />
+        </button>
+        <button className={Classes.delete} onClick={handleSeeAnswer}>
           <div>
-            <SvgDownload color="#ffffff" />
+            <SvgEye color="#ffffff" />
           </div>
           <div className={Classes.hide}>
             <QRCodeCanvas

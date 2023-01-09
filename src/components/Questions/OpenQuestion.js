@@ -57,7 +57,6 @@ const OpenQuestion = (props) => {
           }}
         />
         <button className={Classes.delete}>
-          {" "}
           <SvgDownload color="#ffffff" />
         </button>
       </div>
